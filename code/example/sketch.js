@@ -4,9 +4,7 @@ function preload(){
 
 function setup() {
   createCanvas(800, 800);
-  // hhjhjhjhhhj
-  /*ggfhdgfhdgfhdfghdgfhhfjdhfjdfjdjffjfj
-  */
+ 
 }
 
 function draw() {
