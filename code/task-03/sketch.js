@@ -1,42 +1,57 @@
-const sketchWidth = 400
-const sketchHeight = 400
-
-let lengthHexagon 
-let strokeColor 
-let strokeWeight 
-let hexagonFill 
- 
-
 function preload(){
   // preload assets
 }
 
-function setup() {
-  createCanvas(sketchWidth,sketchHeight);
+var canvasWidth = 400
+var canvasHeight = 400
 
-  lengthHexagon = 20
-  strokeColor = color( 255,255,50 )
-  strokeWeight = strokeWeight( 5 )
- 
+function setup() {
+  createCanvas ( canvasWidth , canvasHeight );
+  background( 255 );
+
 }
 
 function draw() {
-  background(255);
 
-  stroke( 0 )
-  strokeWeight( strokeWeight )
-  fill( hexagonFill)
+  // Dreieck schwarz
+  stroke ( 0 );
+  fill ( 0 );
+  triangle( 0 , 400 , 400 , 400 , 400 , 0 );
 
- beginShape();
- //for( let x = lengthHexagon/2 ; x <= sketchWidth ; x += 2 * lengthHexagon ){
- //  for( let y = 0 ; y <= sketchHeight ; y += 2 * Math.sqrt( Math.pow(lengthHexagon,2) - Math.pow(lengthHexagon/2,2)) ){
+  // Kreis schwarz
+  arc ( 200 , 200 , 
+        200 , 200 , 
+        Math.PI/180*135 , Math.PI/180*315 , CHORD);
 
-    vertex( lengthHexagon/2 , 0 )
-    vertex( 3 * lengthHexagon/2 , 0 )
-    vertex( 2 * lengthHexagon , Math.sqrt( Math.pow(lengthHexagon,2) - Math.pow(lengthHexagon/2,2)) )
-    vertex( 3 * lengthHexagon/2 , 2 * Math.sqrt( Math.pow(lengthHexagon,2) - Math.pow(lengthHexagon/2,2)) )
-    vertex( lengthHexagon/2 , 2 * Math.sqrt( Math.pow(lengthHexagon,2) - Math.pow(lengthHexagon/2,2)) )
-    vertex( 0 , Math.sqrt( Math.pow(lengthHexagon,2) - Math.pow(lengthHexagon/2,2)) )
+  // Kreis weiß
+  stroke ( 255 );
+  fill ( 255 );
+  arc ( 200 , 200 , 
+        200 , 200 , 
+        Math.PI/180*315 , Math.PI/180*135 , CHORD);
 
- endShape( close )
+  // Dreieckspfeile weiß
+  stroke ( 0 );
+  for( let y = 26.6 ; y <= 372.4 ; y += 53.2 ){
+    triangle ( 200 - 13.3 , y , 200 + 13.3 , y , 200 , y + 26.6);
+  }
+
+  // Kreise 1
+  fill ( 0 );
+  circle ( 14.28 + 14.28/2 , 200 , 14.28 );
+
+  // Kreise 2
+  circle ( 14.28*4 + 14.28/2 , 200 , 14.28*3 );
+
+  // Kreise 3
+  stroke ( 255 );
+  fill ( 255 );
+  circle ( 300 + 14.28*2 + 14.28/2 , 200 , 14.28*3 );
+
+  // Kreise 4
+  circle ( 300 + 14.28*5 + 14.28/2 , 200 , 14.28);
+  
+
+
+ 
 }

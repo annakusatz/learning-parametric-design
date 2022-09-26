@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketch</title>
+    <link rel="stylesheet" type="text/css" href="/libraries/p5js/p5.css">
+    <script src="sketch.js"></script>
+    <script src="CCapture.all.min.js"></script>
+    <script src="js/gif.worker.js"></script>
+    <title>P5js - Export Sketch</title>
+
+    <script>
+      var capturer = new CCapture( {
+        framerate: 5,
+        format: "gif",
+        workersPath: "./js/",
+        verbose: true
+      } );
+
+    </script>
+
+  </head>
+  <body>
+    <script src="/libraries/p5js/p5.min.js"></script>
+    <script src="/libraries/p5js/libraries/p5.svg.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
